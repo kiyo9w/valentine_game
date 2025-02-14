@@ -1,0 +1,114 @@
+.message-scene {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-light);
+  padding: 1rem;
+}
+
+.message-container {
+  width: 90%;
+  max-width: 550px;
+  aspect-ratio: 1/1.4;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.message-container.crumpled {
+  width: 120px;
+  aspect-ratio: 1;
+  transform-origin: center;
+}
+
+.message-content {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: var(--text);
+  cursor: pointer;
+  max-width: 80%;
+}
+
+.message-content h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Handlee', cursive;
+  line-height: 1.4;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button-container button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--text);
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.button-container button.secondary {
+  background: var(--primary-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(254, 200, 216, 0.5);
+}
+
+@media (max-width: 480px) {
+  .message-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .button-container button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+.initial-prompt {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(254, 200, 216, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.initial-prompt h2 {
+  font-family: 'OoohBaby', cursive !important;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.message-text {
+  font-family: 'OoohBaby', cursive !important;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: var(--text);
+  margin: 2rem 0;
+  text-align: center;
+  max-width: 80%;
+} 

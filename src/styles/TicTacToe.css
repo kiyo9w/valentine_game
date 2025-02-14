@@ -1,0 +1,235 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 30px rgba(254, 200, 216, 0.3),
+    0 0 0 1px rgba(254, 200, 216, 0.3);
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.game-header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.player-turn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--primary-light);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.cell {
+  aspect-ratio: 1;
+  width: 100%;
+  background: var(--white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.cell:hover:not(.winning) {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.cell.winning {
+  background: var(--primary);
+  animation: pulse 1.5s infinite;
+}
+
+.winner-message {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--primary-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.winner-message p {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.reset-button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+
+.reset-button:hover {
+  background: var(--primary-dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(254, 200, 216, 0.5);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .board {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+  }
+
+  .winner-message {
+    padding: 1rem;
+  }
+
+  .winner-message p {
+    font-size: 1.2rem;
+  }
+
+  .dialog-button {
+    min-width: 100px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.game-over-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+}
+
+.game-over-dialog {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 340px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(254, 200, 216, 0.3);
+}
+
+.dialog-content {
+  margin-bottom: 2rem;
+}
+
+.dialog-emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-content h2 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.dialog-subtitle {
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.dialog-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.dialog-button {
+  min-width: 120px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.continue-button {
+  background: var(--primary);
+  color: var(--text);
+}
+
+.exit-button {
+  background: #f8f8f8;
+  color: var(--text);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dialog-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(254, 200, 216, 0.5);
+}
+
+.game-scene {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.win-counter {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-weight: 600;
+} 

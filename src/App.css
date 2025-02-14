@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'OoohBaby';
+  src: url('./assets/OoohBaby-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fuggles';
+  src: url('./assets/Fuggles-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #FEC8D8;
+  --primary-light: #FDE2E4;
+  --primary-dark: #FF69B4;
+  --accent: #FFB6C1;
+  --text: #4A4A4A;
+  --white: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--primary-light);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Remove any padding from direct children of app-container */
+.app-container > * {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Use OoohBaby for message text */
+.message-text {
+  font-family: 'OoohBaby', cursive;
+  font-size: 2rem; /* Adjust size as needed */
+  line-height: 1.4;
+}
+
+/* Keep the system font for UI elements */
+body {
+  font-family: 'Quicksand', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
