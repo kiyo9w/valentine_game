@@ -9,19 +9,14 @@
 }
 
 .message-container {
-  width: 90%;
-  max-width: 550px;
-  aspect-ratio: 1/1.4;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-items: center;
   padding: 2rem;
-  transition: width 0.3s ease, height 0.3s ease;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .message-container.crumpled {
@@ -31,11 +26,12 @@
 }
 
 .message-content {
-  font-family: 'Quicksand', sans-serif;
-  text-align: center;
-  color: var(--text);
-  cursor: pointer;
-  max-width: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .message-content h2 {
@@ -86,29 +82,50 @@
 }
 
 .initial-prompt {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(254, 200, 216, 0.3);
   text-align: center;
-  max-width: 400px;
-  width: 90%;
-  margin-bottom: 2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
 }
 
 .initial-prompt h2 {
-  font-family: 'OoohBaby', cursive !important;
+  font-family: 'OoohBaby', cursive;
   font-size: 2.4rem;
   margin-bottom: 2rem;
   color: var(--text);
 }
 
 .message-text {
-  font-family: 'OoohBaby', cursive !important;
+  font-family: 'OoohBaby', cursive;
   font-size: 2.2rem;
-  line-height: 1.4;
+  line-height: 1.6;
   color: var(--text);
   margin: 2rem 0;
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
+  padding: 0 2rem;
+}
+
+/* Adjust paper background */
+.message-container[style*="background-image"] {
+  background-size: 100% 100%;
+  background-position: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .message-container {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .message-text {
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
 } 

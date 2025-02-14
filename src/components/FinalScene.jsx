@@ -10,12 +10,16 @@ import cat1 from '../assets/cat1.png'
 import cat2 from '../assets/cat2.png'
 import piano from '../assets/piano.png'
 import teddyBear from '../assets/teddy_bear.png'
+import petal1 from '../assets/petals/petals_1.png'
+import petal2 from '../assets/petals/petals_2.png'
+import petal3 from '../assets/petals/petals_3.png'
+import petal4 from '../assets/petals/petals_4.png'
+import petal5 from '../assets/petals/petals_5.png'
+import petal6 from '../assets/petals/petals_6.png'
 import '../styles/FinalScene.css'
 
 // Import all petals
-const petalImages = Array.from({ length: 6 }, (_, i) => 
-  `/src/assets/petals/petals_${i + 1}.png`
-)
+const petalImages = [petal1, petal2, petal3, petal4, petal5, petal6]
 
 const FloatingPetal = ({ image, delay }) => {
   const direction = Math.random() > 0.5 ? 1 : -1
